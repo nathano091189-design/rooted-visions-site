@@ -137,3 +137,9 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# ignore backups & scratch
+/_backup/
+/backend/
+/src/
+
