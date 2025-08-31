@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooted Visions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-[#161b22] text-[#c9d1d9] p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold rounded-lg px-2 py-1 transition-all duration-300 transform hover:scale-105">Rooted Visions</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">About</a></li>
+                    <li><a href="#services" class="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">Services</a></li>
+                    <li><a href="#contact" class="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-center p-4 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/0d1117/2C5364?text=Rooted+Visions');">
+            <div class="absolute inset-0 bg-black opacity-70"></div>
+            <div class="relative z-10 text-white p-6 rounded-lg max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-7xl font-extrabold leading-tight">Your Vision. Our Foundation.</h1>
+                <p class="mt-4 text-lg md:text-2xl font-light max-w-2xl mx-auto">
+                    Transforming bold ideas into tangible realities with expert strategy, automation, and design.
+                </p>
+                <button class="mt-8 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+                    Start Your Project
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-[#161b22]">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 text-white">Rooted in Community. Built for the Future.</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://placehold.co/800x600/1e2329/c9d1d9?text=Our+Mission" alt="Our Team" class="rounded-xl shadow-2xl w-full transform transition-all duration-500 hover:scale-105">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <p class="text-gray-400 leading-relaxed text-lg">
+                            At Rooted Visions, we believe that every great project starts with a strong foundation. We are a team dedicated to providing bespoke solutions that are deeply rooted in your goals and values. From initial concept to final execution, we are here to support and guide you every step of the way. Our mission is to build lasting partnerships and deliver results that not only meet but exceed your expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-[#0d1117]">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-white">What We Do</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Service Card 1: Web Design -->
+                    <div class="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                        <div class="text-teal-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">Web Design & Development</h3>
+                        <p class="text-gray-400">
+                            Crafting beautiful, responsive, and high-performance websites tailored to your specific needs.
+                        </p>
+                    </div>
+                    <!-- Service Card 2: Digital Strategy -->
+                    <div class="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                        <div class="text-emerald-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">Strategic Consulting</h3>
+                        <p class="text-gray-400">
+                            Developing a clear roadmap to help you achieve your online goals and streamline operations.
+                        </p>
+                    </div>
+                    <!-- Service Card 3: Brand Identity -->
+                    <div class="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                        <div class="text-blue-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.5 3-9s-1.343-9-3-9m0 18v-1.5m0-9V3m-9 9h-1.5m1.5 0h-1.5m0 0a9 9 0 01-9-9m9 9a9 9 0 00-9-9m9 9h-1.5m1.5 0h-1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">Brand Identity</h3>
+                        <p class="text-gray-400">
+                            Building a cohesive and memorable brand that resonates with your target audience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-[#161b22]">
+            <div class="container mx-auto px-4 md:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 text-white">Let's Build Something Together</h2>
+                <div class="max-w-xl mx-auto text-center">
+                    <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+                        Ready to start your project? Fill out the form below and we'll get back to you soon to discuss your vision.
+                    </p>
+                    <form action="#" method="POST" class="space-y-6">
+                        <input type="text" placeholder="Your Name" class="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300">
+                        <input type="email" placeholder="Your Email" class="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300">
+                        <textarea placeholder="Your Message" rows="6" class="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300"></textarea>
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#161b22] text-gray-400 py-6">
+        <div class="container mx-auto text-center px-4">
+            <p>&copy; 2024 Rooted Visions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

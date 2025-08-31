@@ -8,5 +8,11 @@
     "build": "npm --prefix web run build",
     "preview": "npm --prefix web run preview",
     "check": "node web/scripts/check-env.mjs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "firebase-tools": "^14.15.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12"
   }
 }
