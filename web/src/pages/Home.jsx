@@ -1,22 +1,74 @@
+import { useState } from 'react';
+
 export default function Home(){
+  const [image, setImage] = useState(null);
+  const [video, setVideo] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+    }
+  };
+
+  const handleVideoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setVideo(URL.createObjectURL(file));
+    }
+  };
+
   return (
-    <main>
-      <section className="bg-slate-50 border-b">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold text-slate-900">Co-intelligence that makes small teams feel bigger.</h1>
-          <p className="mt-4 text-lg text-slate-700">
-            Workflow automation, an AI co-assistant, and micro-learning—built for nonprofits and small businesses.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <a href="/rooted-visions-site/pilot" className="px-4 py-2 rounded-md bg-green-600 text-white">
-              Join the Bronx Phase I Pilot
-            </a>
-            <a href="/rooted-visions-site/platform" className="px-4 py-2 rounded-md border">
-              See how it works
-            </a>
-          </div>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
+      <img src="/logo.svg" alt="Rooted Visions logo" className="w-32 mb-8" />
+      <h1 className="text-4xl font-bold text-slate-900 mb-2 text-center">
+        Welcome to Rooted Visions
+      </h1>
+      <p className="text-slate-600 mb-8 text-center">
+        Upload an image or video to get started.
+      </p>
+
+      <div className="w-full max-w-md space-y-8">
+        <div className="flex flex-col items-center p-6 border-2 border-dashed rounded-lg">
+          <label htmlFor="imageUpload" className="cursor-pointer text-center">
+            <span className="text-green-600 font-semibold">Upload Image</span>
+            <input
+              id="imageUpload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="hidden"
+            />
+          </label>
+          {image && (
+            <img
+              src={image}
+              alt="Preview"
+              className="mt-4 max-h-48 rounded-md"
+            />
+          )}
         </div>
-      </section>
+
+        <div className="flex flex-col items-center p-6 border-2 border-dashed rounded-lg">
+          <label htmlFor="videoUpload" className="cursor-pointer text-center">
+            <span className="text-green-600 font-semibold">Upload Video</span>
+            <input
+              id="videoUpload"
+              type="file"
+              accept="video/*"
+              onChange={handleVideoChange}
+              className="hidden"
+            />
+          </label>
+          {video && (
+            <video
+              src={video}
+              controls
+              className="mt-4 max-h-48 rounded-md"
+            />
+          )}
+        </div>
+      </div>
     </main>
   );
 }
