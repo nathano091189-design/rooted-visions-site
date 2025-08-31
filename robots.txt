@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: /rooted-visions-site/sitemap.xml
