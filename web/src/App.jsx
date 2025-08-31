@@ -1,242 +1,131 @@
-import { useEffect } from "react";
-import {
-  Rocket,
-  Wrench,
-  ClipboardCheck,
-  BarChart3,
-  Phone,
-  Mail,
-} from "lucide-react";
+import React from 'react';
 
-/** smooth scroll helper */
-function scrollToId(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-export default function RootedVisionsSite() {
-  useEffect(() => {
-    document.title =
-      "Rooted Visions — Rooted in Community. Built for the Future.";
-  }, []);
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="flex flex-col min-h-screen font-inter bg-[#0d1117] text-[#c9d1d9]">
+
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-gray-100">
-        <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
-          {/* Brand */}
-          <a
-            href={import.meta.env.BASE_URL}
-            className="inline-flex items-center gap-2 font-semibold"
-          >
-            <span className="inline-block size-2 rounded-full bg-emerald-500" />
-            Rooted Visions
+      <header className="bg-[#161b22] text-[#c9d1d9] p-4 sticky top-0 z-50 shadow-lg">
+        <div className="container mx-auto flex justify-between items-center">
+          <a href="#" className="text-2xl font-bold rounded-lg px-2 py-1 transition-all duration-300 transform hover:scale-105">
+            <img src="https://placehold.co/150x50/334155/E2E8F0?text=Your+Logo" alt="Rooted Visions Logo" className="h-10" />
           </a>
-
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <button onClick={() => scrollToId("services")} className="hover:text-emerald-700">
-              Services
-            </button>
-            <button onClick={() => scrollToId("work")} className="hover:text-emerald-700">
-              Work
-            </button>
-            <button onClick={() => scrollToId("about")} className="hover:text-emerald-700">
-              About
-            </button>
-            <button onClick={() => scrollToId("contact")} className="hover:text-emerald-700">
-              Contact
-            </button>
-
-            {/* 👇 Client portal link */}
-            <a
-              href={`${import.meta.env.BASE_URL}portal`}
-              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200 hover:ring-emerald-500 transition"
-            >
-              Client portal
-            </a>
-
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToId("contact");
-              }}
-              className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 text-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-emerald-700 transition"
-            >
-              Free consult
-            </a>
+          <nav>
+            <ul className="flex space-x-4">
+              <li><a href="#about" className="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">About</a></li>
+              <li><a href="#services" className="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">Services</a></li>
+              <li><a href="#contact" className="px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">Contact</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
-      {/* Hero */}
-      <section id="hero" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/60 to-transparent pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-4 py-16 grid gap-10 lg:grid-cols-2">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full ring-1 ring-gray-200 px-3 py-1 text-xs font-medium mb-4 bg-white">
-              Free, fast, and lightweight
-            </span>
-            <h1 className="text-4xl/tight sm:text-5xl font-bold">
-              Systems that give your team{" "}
-              <span className="text-emerald-600">time back</span>
-            </h1>
-            <p className="mt-4 text-gray-600 max-w-xl">
-              Rooted Visions — Rooted in Community. Built for the Future.
-              We help schools, nonprofits, and small teams streamline
-              operations with automation, clear SOPs, and real-time KPIs —
-              without breaking the budget.
+      {/* Main Content */}
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="relative h-screen flex items-center justify-center text-center p-4 bg-cover bg-center" style={{ backgroundImage: "url('https://placehold.co/1920x1080/0d1117/2C5364?text=Rooted+Visions')" }}>
+          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div className="relative z-10 text-white p-6 rounded-lg max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-7xl font-extrabold leading-tight">Your Vision. Our Foundation.</h1>
+            <p className="mt-4 text-lg md:text-2xl font-light max-w-2xl mx-auto">
+              Transforming bold ideas into tangible realities with expert strategy, automation, and design.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button
-                onClick={() => scrollToId("contact")}
-                className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 text-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-emerald-700 transition"
-              >
-                Get a free consult
-              </button>
-              <button
-                onClick={() => scrollToId("services")}
-                className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200 hover:ring-emerald-500 transition"
-              >
-                Explore services
-              </button>
+            <button className="mt-8 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+              Start Your Project
+            </button>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-24 bg-[#161b22]">
+          <div className="container mx-auto px-4 md:px-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 text-white">Rooted in Community. Built for the Future.</h2>
+            <div className="flex flex-col md:flex-row items-center md:space-x-12">
+              <div className="md:w-1/2 mb-8 md:mb-0">
+                <img src="https://placehold.co/800x600/1e2329/c9d1d9?text=Our+Mission" alt="Our Team" className="rounded-xl shadow-2xl w-full transform transition-all duration-500 hover:scale-105" />
+              </div>
+              <div className="md:w-1/2 text-center md:text-left">
+                <p className="text-gray-400 leading-relaxed text-lg">
+                  At Rooted Visions, we believe that every great project starts with a strong foundation. We are a team dedicated to providing bespoke solutions that are deeply rooted in your goals and values. From initial concept to final execution, we are here to support and guide you every step of the way. Our mission is to build lasting partnerships and deliver results that not only meet but exceed your expectations.
+                </p>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Quick list card */}
-          <div className="lg:pl-8">
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-4 divide-y">
-              {[
-                ["Grant intake ➜ CRM"],
-                ["Field trip SOPs"],
-                ["Attendance dashboard"],
-              ].map(([title], i) => (
-                <div key={i} className="py-4">
-                  <div className="text-sm font-medium">{title}</div>
+        {/* Services Section */}
+        <section id="services" className="py-24 bg-[#0d1117]">
+          <div className="container mx-auto px-4 md:px-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-white">What We Do</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* Service Card 1: Web Design */}
+              <div className="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                <div className="text-teal-500 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
                 </div>
-              ))}
+                <h3 className="text-2xl font-semibold text-white mb-2">Web Design & Development</h3>
+                <p className="text-gray-400">
+                  Crafting beautiful, responsive, and high-performance websites tailored to your specific needs.
+                </p>
+              </div>
+              {/* Service Card 2: Digital Strategy */}
+              <div className="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                <div className="text-emerald-500 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-2">Strategic Consulting</h3>
+                <p className="text-gray-400">
+                  Developing a clear roadmap to help you achieve your online goals and streamline operations.
+                </p>
+              </div>
+              {/* Service Card 3: Brand Identity */}
+              <div className="bg-[#161b22] p-8 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105">
+                <div className="text-blue-500 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.5 3-9s-1.343-9-3-9m0 18v-1.5m0-9V3m-9 9h-1.5m1.5 0h-1.5m0 0a9 9 0 01-9-9m9 9a9 9 0 00-9-9m9 9h-1.5m1.5 0h-1.5" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-2">Brand Identity</h3>
+                <p className="text-gray-400">
+                  Building a cohesive and memorable brand that resonates with your target audience.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl px-4 py-14">
-        <h2 className="text-2xl font-bold">What we do</h2>
-        <p className="mt-2 text-gray-600">
-          Start simple, scale smart. Pick a starter package and we tailor it to your context.
-        </p>
-
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <Card
-            icon={<Wrench className="size-5" />}
-            title="Workflow Automation"
-            desc="Zapier/Make, AI assistants, and low-code tools to remove busywork."
-          />
-          <Card
-            icon={<ClipboardCheck className="size-5" />}
-            title="Ops Consulting"
-            desc="SOPs, playbooks, and systems design for schools, nonprofits, and small orgs."
-          />
-          <Card
-            icon={<BarChart3 className="size-5" />}
-            title="Dashboards & Data"
-            desc="Clean pipelines, KPI dashboards, and lightweight analytics you can trust."
-          />
-          <Card
-            icon={<Rocket className="size-5" />}
-            title="Training & Enablement"
-            desc="Onboarding, change-management, and workshops that stick."
-          />
-        </div>
-
-        <div className="mt-8 rounded-2xl bg-emerald-600 text-white p-6 flex items-center justify-between">
-          <div>
-            <div className="font-semibold">Launch Week: $0 starter</div>
-            <p className="text-emerald-50 text-sm mt-1 max-w-2xl">
-              We’ll scope one process, sketch your SOP, and prototype a quick automation — free.
-              If you love it, we’ll expand.
-            </p>
+        {/* Contact Section */}
+        <section id="contact" className="py-24 bg-[#161b22]">
+          <div className="container mx-auto px-4 md:px-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 text-white">Let's Build Something Together</h2>
+            <div className="max-w-xl mx-auto text-center">
+              <p className="text-gray-400 mb-8 leading-relaxed text-lg">
+                Ready to start your project? Fill out the form below and we'll get back to you soon to discuss your vision.
+              </p>
+              <form action="#" method="POST" className="space-y-6">
+                <input type="text" placeholder="Your Name" className="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300" />
+                <input type="email" placeholder="Your Email" className="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300" />
+                <textarea placeholder="Your Message" rows="6" className="w-full p-4 rounded-xl bg-[#0d1117] text-white placeholder-gray-500 border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors duration-300"></textarea>
+                <button type="submit" className="w-full px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
-          <Rocket className="size-6" />
-        </div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="mx-auto max-w-7xl px-4 py-14">
-        <h2 className="text-2xl font-bold">Recent work</h2>
-        <p className="mt-2 text-gray-600">
-          A few examples we’ve helped teams ship quickly and safely.
-        </p>
-        <ul className="mt-6 list-disc pl-6 space-y-1 text-gray-700">
-          <li>Grant intake → CRM sync with approvals</li>
-          <li>Field trip checklist & automated reminders</li>
-          <li>Attendance dashboard with weekly snapshots</li>
-        </ul>
-      </section>
-
-      {/* About */}
-      <section id="about" className="mx-auto max-w-7xl px-4 py-14">
-        <h2 className="text-2xl font-bold">About</h2>
-        <p className="mt-2 text-gray-600 max-w-2xl">
-          Rooted in community, focused on affordable systems that save time and reduce errors.
-          Pragmatic, transparent, and friendly.
-        </p>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-4 py-14">
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold">Let’s chat</h2>
-          <p className="mt-2 text-gray-600">
-            Book a 20-minute call. Tell us your bottleneck; we’ll show a quick path to value.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="mailto:hello@example.com"
-              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200 hover:ring-emerald-500 transition"
-            >
-              <Mail className="size-4" />
-              hello@example.com
-            </a>
-            <a
-              href="tel:+15551234567"
-              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200 hover:ring-emerald-500 transition"
-            >
-              <Phone className="size-4" />
-              +1 (555) 123-4567
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100">
-        <div className="mx-auto max-w-7xl px-4 py-6 text-sm text-gray-500 flex items-center justify-between">
-          <span>© {new Date().getFullYear()} Rooted Visions. All rights reserved.</span>
-          <a
-            href={`${import.meta.env.BASE_URL}portal`}
-            className="inline-flex items-center gap-2 rounded-xl px-3 py-1.5 ring-1 ring-gray-200 hover:ring-emerald-500 transition"
-          >
-            Client portal
-          </a>
+      <footer className="bg-[#161b22] text-gray-400 py-6">
+        <div className="container mx-auto text-center px-4">
+          <p>&copy; 2024 Rooted Visions. All rights reserved.</p>
         </div>
       </footer>
-    </div>
-  );
-}
 
-/** simple card component */
-function Card({ icon, title, desc }) {
-  return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-      <div className="inline-flex items-center justify-center size-9 rounded-xl bg-emerald-50 text-emerald-700">
-        {icon}
-      </div>
-      <h3 className="mt-3 font-semibold">{title}</h3>
-      <p className="mt-1 text-sm text-gray-600">{desc}</p>
     </div>
   );
 }
